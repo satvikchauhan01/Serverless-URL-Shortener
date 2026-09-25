@@ -1,0 +1,36 @@
+{
+  "name": "url-shortener-worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare Worker behind the URL shortener: the REST API and the redirects.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply url-shortener --local",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "hono": "^4.13.9"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.22.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.9",
+    "vitest": "~4.1.11",
+    "wrangler": "^4.140.0"
+  },
+  "//": "vite is held at 7: next to vitest 4 (required by @cloudflare/vitest-pool-workers), vite 8 makes npm 10 crash while resolving its optional devtools peers.",
+  "overrides": {
+    "vite": "^7.3.6"
+  }
+}

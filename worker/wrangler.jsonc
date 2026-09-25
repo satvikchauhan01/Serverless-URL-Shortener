@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "url-shortener",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-15",
+  "observability": {
+    "enabled": true,
+  },
+  "vars": {
+    // The React app. Anyone opening the bare short-link host is sent here.
+    "FRONTEND_URL": "http://localhost:5173",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "url-shortener",
+      // database_id is added in Phase 6, once the production database exists.
+    },
+  ],
+}

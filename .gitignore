@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+
+# Wrangler's local state: the local D1 database, build output, logs
+.wrangler/
+
+# Local secrets. The .example files document what goes in them.
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+*.log
+.DS_Store
