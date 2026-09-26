@@ -14,7 +14,7 @@
     {
       "binding": "DB",
       "database_name": "url-shortener",
-      "database_id": "da570986-a97e-4cc2-ad2d-e11d9297c34d"
+      "database_id": "da570986-a97e-4cc2-ad2d-e11d9297c34d",
     },
   ],
   "triggers": {
