@@ -12,7 +12,14 @@ export default defineConfig(async () => {
       cloudflareTest({
         wrangler: { configPath: './wrangler.jsonc' },
         miniflare: {
-          bindings: { TEST_MIGRATIONS: migrations },
+          // Stand-ins for the secrets that .dev.vars holds locally and Cloudflare holds in
+          // production. GitHub itself is mocked in the tests.
+          bindings: {
+            TEST_MIGRATIONS: migrations,
+            JWT_SECRET: 'test-only-secret-that-is-long-enough-for-hs256',
+            GITHUB_CLIENT_ID: 'test-client-id',
+            GITHUB_CLIENT_SECRET: 'test-client-secret',
+          },
         },
       }),
     ],

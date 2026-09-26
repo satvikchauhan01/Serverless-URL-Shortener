@@ -1,0 +1,23 @@
+.figure {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+  margin: 0;
+}
+
+.tile {
+  padding: var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+}
+
+.tile svg {
+  width: 100%;
+  height: auto;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}

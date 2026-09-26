@@ -5,11 +5,12 @@ coverage/
 # Wrangler's local state: the local D1 database, build output, logs
 .wrangler/
 
-# Local secrets. The .example files document what goes in them.
+# Local secrets. .dev.vars.example documents what goes in them.
 .dev.vars*
 !.dev.vars.example
-.env*
-!.env.example
+
+# Local overrides of the frontend's committed .env files
+*.local
 
 *.log
 .DS_Store

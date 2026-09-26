@@ -1,0 +1,3 @@
+# LF line endings everywhere, Windows checkouts included, so Prettier's checks pass on
+# every machine.
+* text=auto eol=lf

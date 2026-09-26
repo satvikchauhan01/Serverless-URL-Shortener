@@ -1,0 +1,33 @@
+.tile {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.label {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
+.value {
+  font-size: clamp(1.25rem, 0.9rem + 1.2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+/* The one number the stats page leads with. */
+.hero {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.note {
+  color: var(--muted);
+  font-size: var(--text-xs);
+}

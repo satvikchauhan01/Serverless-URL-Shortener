@@ -1,0 +1,87 @@
+.field {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.optional {
+  margin-left: var(--space-1);
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  overflow: hidden;
+}
+
+.input:focus-within {
+  border-color: var(--ink);
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.input[data-tone='bad'] {
+  border-color: var(--danger);
+}
+
+.input[data-tone='good'] {
+  border-color: var(--success);
+}
+
+/* A long host (a workers.dev one, say) is cut short so the alias keeps its room. */
+.prefix {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  max-width: 60%;
+  padding: 0 var(--space-2) 0 var(--space-3);
+  background: var(--sunken);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.host {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.input input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 var(--space-3);
+  border: 0;
+  background: transparent;
+}
+
+.input input:focus {
+  outline: none;
+}
+
+.status {
+  font-size: var(--text-sm);
+}
+
+.status[data-tone='muted'] {
+  color: var(--muted);
+}
+
+.status[data-tone='good'] {
+  color: var(--success);
+}
+
+.status[data-tone='bad'] {
+  color: var(--danger);
+}

@@ -1,0 +1,10 @@
+# Copy to .dev.vars (git-ignored) for `npm run dev`. In production the same three values
+# are set with `npx wrangler secret put <NAME>`.
+
+# Any long random string, e.g. the output of `openssl rand -base64 48`.
+JWT_SECRET=
+
+# From a GitHub OAuth app whose callback URL is
+# http://localhost:8787/api/auth/github/callback
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=

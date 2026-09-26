@@ -1,0 +1,70 @@
+.region {
+  position: fixed;
+  bottom: var(--space-5);
+  left: 50%;
+  z-index: 60;
+  display: grid;
+  gap: var(--space-2);
+  width: min(28rem, calc(100% - 2 * var(--space-4)));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.toast {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-pop);
+  overflow: hidden;
+  pointer-events: auto;
+  animation: rise 200ms var(--ease-out);
+}
+
+.message {
+  flex: 1;
+}
+
+.action {
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--accent-soft);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.action:hover {
+  background: rgb(255 255 255 / 10%);
+}
+
+/* A thin bar that runs out with the toast, so "Undo" shows how long it has left. */
+.timer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  animation: run-out linear forwards;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes run-out {
+  to {
+    transform: scaleX(0);
+  }
+}

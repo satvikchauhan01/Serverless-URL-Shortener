@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { CODE_LENGTH, CODE_PATTERN, generateCode } from '../../src/lib/codes.js';
+import { aliasProblem, CODE_LENGTH, CODE_PATTERN, generateCode } from '../../src/lib/codes.js';
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -38,4 +38,21 @@ describe('CODE_PATTERN', () => {
       expect(CODE_PATTERN.test(code)).toBe(false);
     },
   );
+});
+
+describe('aliasProblem', () => {
+  it.each(['my-resume', 'Launch_2026', 'abc'])('has no problem with %s', (alias) => {
+    expect(aliasProblem(alias)).toBeNull();
+  });
+
+  it.each(['ab', 'has space', 'a'.repeat(33), 'wp-login.php', 42, null])(
+    'calls %j invalid',
+    (alias) => {
+      expect(aliasProblem(alias)).toBe('invalid');
+    },
+  );
+
+  it.each(['api', 'Dashboard', 'LOGIN', 'cdn-cgi'])('calls %s reserved', (alias) => {
+    expect(aliasProblem(alias)).toBe('reserved');
+  });
 });

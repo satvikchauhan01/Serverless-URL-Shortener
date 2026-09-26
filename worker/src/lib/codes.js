@@ -9,6 +9,34 @@ export const CODE_LENGTH = 7;
 // Every short code matches this, whether it was generated or picked by a user.
 export const CODE_PATTERN = /^[A-Za-z0-9_-]{3,32}$/;
 
+// Paths the app uses or is likely to need, plus Cloudflare's own /cdn-cgi/ prefix.
+const RESERVED_ALIASES = new Set([
+  'about',
+  'account',
+  'admin',
+  'api',
+  'app',
+  'assets',
+  'auth',
+  'cdn-cgi',
+  'dashboard',
+  'docs',
+  'health',
+  'help',
+  'links',
+  'login',
+  'logout',
+  'privacy',
+  'settings',
+  'signin',
+  'signup',
+  'static',
+  'stats',
+  'status',
+  'terms',
+  'www',
+]);
+
 export function generateCode(length = CODE_LENGTH) {
   let code = '';
   while (code.length < length) {
@@ -19,4 +47,12 @@ export function generateCode(length = CODE_LENGTH) {
     }
   }
   return code;
+}
+
+// Says why an alias can't be used ('invalid' or 'reserved'), or returns null when it is
+// fine. Whether someone already took it is a question for the database.
+export function aliasProblem(alias) {
+  if (typeof alias !== 'string' || !CODE_PATTERN.test(alias)) return 'invalid';
+  if (RESERVED_ALIASES.has(alias.toLowerCase())) return 'reserved';
+  return null;
 }
