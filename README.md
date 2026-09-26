@@ -9,8 +9,9 @@ a **Worker** answers the API and the redirects at the edge, **D1** (SQLite) stor
 data, and the React frontend is a static site on **Cloudflare Pages**. GitHub Actions
 tests every push and deploys `main`.
 
-> **Live:** _links go here after the first deploy_ · [Roadmap](ROADMAP.md) ·
-> [Requirements](REQUIREMENTS.md)
+> **Live:** [hop-frontend.pages.dev](https://hop-frontend.pages.dev) · API and short links on
+> [url-shortener.satvik-url-shortener.workers.dev](https://url-shortener.satvik-url-shortener.workers.dev)
+> · [Roadmap](ROADMAP.md) · [Requirements](REQUIREMENTS.md)
 
 ![The home page](docs/screenshots/home.png)
 

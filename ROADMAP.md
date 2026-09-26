@@ -19,14 +19,14 @@ deadline is the day Phase 6 meets its exit criteria. What "finished" means is de
 
 ## Progress
 
-| Phase | Focus                                    | Status                       |
-| ----- | ---------------------------------------- | ---------------------------- |
-| 1     | Foundation and the core redirect         | Done                         |
-| 2     | Link features and abuse protection       | Done                         |
-| 3     | Accounts and the link management API     | Done                         |
-| 4     | Frontend: visual identity and shortening | Done                         |
-| 5     | Frontend: dashboard and analytics        | Done                         |
-| 6     | CI/CD, deployment and launch             | Waiting for the first deploy |
+| Phase | Focus                                    | Status |
+| ----- | ---------------------------------------- | ------ |
+| 1     | Foundation and the core redirect         | Done   |
+| 2     | Link features and abuse protection       | Done   |
+| 3     | Accounts and the link management API     | Done   |
+| 4     | Frontend: visual identity and shortening | Done   |
+| 5     | Frontend: dashboard and analytics        | Done   |
+| 6     | CI/CD, deployment and launch             | Done   |
 
 ## Phase 1: Foundation and the core redirect
 
@@ -145,13 +145,13 @@ The project goes live, deploys itself and is documented for the portfolio.
 
 - [x] GitHub Actions: checks on every push and pull request; on `main`, apply migrations,
       deploy the Worker, deploy Pages (`cloudflare/wrangler-action@v4`)
-- [ ] Production configuration: D1 database id, variables, secrets, production OAuth app,
+- [x] Production configuration: D1 database id, variables, secrets, production OAuth app,
       Pages project
 - [x] Security headers for the Pages site
 - [x] README with screenshots, architecture diagram, API reference, setup, deployment
       and design trade-offs
-- [x] Lighthouse run on the production build (desktop 100/100/100/100, mobile 99/100/100/100); to repeat on the live site
-- [ ] Final audit: every requirement re-verified against the production URLs
+- [x] Lighthouse run on the production build (desktop 100/100/100/100, mobile 99/100/100/100), repeated on the live site with the same scores
+- [x] Final audit: every requirement re-verified against the production URLs
 
 Checks off: STK-6, STK-7, SEC-4, CQ-1 to CQ-5, PRF-3, TST-5, DEP-1 to DEP-5, DOC-1,
 DOC-2

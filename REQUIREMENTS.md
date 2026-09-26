@@ -17,7 +17,7 @@ referenced from `ROADMAP.md`, from tests and from commit messages.
 - [x] **STK-4** Styling is hand-written CSS (CSS Modules plus shared design tokens). No component kits or pre-styled frameworks (MUI, Chakra, Bootstrap, shadcn/ui, DaisyUI).
 - [x] **STK-5** Local development needs no external service: the Worker runs under `wrangler dev` with a local D1 database, the frontend under the Vite dev server.
 - [x] **STK-6** Hosted resources (D1 database, Pages project, GitHub OAuth app, secrets) live in the owner's accounts. Their IDs and credentials come from the owner and are never invented or committed.
-- [ ] **STK-7** Normal demo traffic stays inside the Cloudflare free plan.
+- [x] **STK-7** Normal demo traffic stays inside the Cloudflare free plan.
 
 ## 2. Short links
 
@@ -131,15 +131,15 @@ Endpoint summary:
 
 - [x] **PRF-1** The redirect does exactly one D1 read, an indexed lookup by code, before responding.
 - [x] **PRF-2** No API query scans the whole `links` or `clicks` table. Every lookup is served by an index, checked with `EXPLAIN QUERY PLAN`.
-- [ ] **PRF-3** The production landing page scores at least 90 in Lighthouse for Performance, Accessibility, Best Practices and SEO.
+- [x] **PRF-3** The production landing page scores at least 90 in Lighthouse for Performance, Accessibility, Best Practices and SEO.
 
 ## 14. Code quality and structure
 
 - [x] **CQ-1** JavaScript only, with React only where there is UI.
 - [x] **CQ-2** The code reads like a person wrote it: comments explain intent and non-obvious decisions. No commented-out code, dead code, placeholder lines or leftover debug logging.
 - [x] **CQ-3** The repository follows the layout in section 17: one responsibility per file, no stray files at the root.
-- [ ] **CQ-4** ESLint passes with zero warnings and Prettier formatting is enforced in both packages. CI checks both.
-- [ ] **CQ-5** Every commit is made and pushed by the owner from their own machine; Claude never commits or pushes. Each phase ends with at least one descriptive commit.
+- [x] **CQ-4** ESLint passes with zero warnings and Prettier formatting is enforced in both packages. CI checks both.
+- [x] **CQ-5** Every commit is made and pushed by the owner from their own machine; Claude never commits or pushes. Each phase ends with at least one descriptive commit.
 
 ## 15. Testing
 
@@ -147,14 +147,14 @@ Endpoint summary:
 - [x] **TST-2** Every endpoint has tests for its success path and for each of its documented errors.
 - [x] **TST-3** Tests cover redirects, expiry, bot filtering, click counting, rate limiting, the OAuth callback (with GitHub mocked), JWT checks and ownership rules.
 - [x] **TST-4** Frontend tests (Vitest with Testing Library) cover the validation helpers, the API client's error handling, the shorten form and delete-with-undo.
-- [ ] **TST-5** The full test suite passes in CI.
+- [x] **TST-5** The full test suite passes in CI.
 
 ## 16. Delivery and documentation
 
-- [ ] **DEP-1** GitHub Actions runs lint, tests and the frontend build on every push and pull request.
-- [ ] **DEP-2** A push to `main` that passes the checks applies the D1 migrations, deploys the Worker and deploys the frontend to Pages, using `cloudflare/wrangler-action@v4`.
+- [x] **DEP-1** GitHub Actions runs lint, tests and the frontend build on every push and pull request.
+- [x] **DEP-2** A push to `main` that passes the checks applies the D1 migrations, deploys the Worker and deploys the frontend to Pages, using `cloudflare/wrangler-action@v4`.
 - [x] **DEP-3** The pipeline needs only the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets.
-- [ ] **DEP-4** Production is live: the Worker on `*.workers.dev`, the frontend on `*.pages.dev`, and GitHub sign-in works end to end.
+- [x] **DEP-4** Production is live: the Worker on `*.workers.dev`, the frontend on `*.pages.dev`, and GitHub sign-in works end to end.
 - [x] **DEP-5** Environment-specific values (API URL, frontend URL, OAuth client id) come from configuration, never from source code.
 - [x] **DOC-1** `README.md` covers what the project is, live links, screenshots, an architecture diagram, features, the stack, an API reference, local setup, deployment, design decisions and trade-offs, and how to run the tests.
 - [x] **DOC-2** `ROADMAP.md` reflects real progress at the end of every phase.
